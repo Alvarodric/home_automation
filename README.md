@@ -15,3 +15,31 @@ python3 -m pip install wheel &&
 pip3 install homeassistant &&
 hass
 ```
+
+or with Docker 
+```
+sudo apt-get install docker.io docker-compose
+sudo reboot
+mkdir ~/home-assistant
+nano docker-compose.yml
+```
+write the following:
+
+
+version: '3'
+services:
+  homeassistant:
+    container_name: home-assistant
+    image: homeassistant/raspberrypi4-homeassistant:stable
+    volumes:
+      - /home/pi/homeassistant:/config
+    environment:
+      - TZ=Europe/Warsaw
+    restart: always
+    network_mode: host
+    
+ Finally: 
+ ```
+ sudo docker-compose up -d
+ ```
+ 
