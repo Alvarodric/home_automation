@@ -25,7 +25,7 @@ nano docker-compose.yml
 ```
 write the following:
 
-
+'''
 version: '3'
 services:
   homeassistant:
@@ -37,7 +37,7 @@ services:
       - TZ=Europe/Warsaw
     restart: always
     network_mode: host
-    
+ '''
  Finally: 
  ```
  sudo docker-compose up -d
