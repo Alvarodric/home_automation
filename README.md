@@ -23,7 +23,7 @@ sudo reboot
 mkdir ~/home-assistant
 nano docker-compose.yml
 ```
-write the following:
+in the docker-compose.yml file write the following:
 
 ```
 version: '3'
