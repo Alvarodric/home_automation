@@ -1,0 +1,43 @@
+alias: Tag ADJUST BRIGHTNESS is scanned
+description: ''
+trigger:
+  - platform: tag
+    tag_id: 9011a7fb-7916-42af-8b57-e7d13d16a2b3
+condition: []
+action:
+  - choose:
+      - conditions:
+          - condition: numeric_state
+            entity_id: light.yeelight_monoa_0xed3674f
+            above: '254'
+            attribute: brightness
+        sequence:
+          - type: turn_on
+            device_id: 4e5174cab4ac213fd7b2e344ad811f8e
+            entity_id: light.yeelight_monoa_0xed3674f
+            domain: light
+            brightness_pct: 50
+      - conditions:
+          - condition: numeric_state
+            entity_id: light.yeelight_monoa_0xed3674f
+            attribute: brightness
+            above: '125'
+        sequence:
+          - type: turn_off
+            device_id: 4e5174cab4ac213fd7b2e344ad811f8e
+            entity_id: light.yeelight_monoa_0xed3674f
+            domain: light
+      - conditions:
+          - condition: device
+            type: is_off
+            device_id: 4e5174cab4ac213fd7b2e344ad811f8e
+            entity_id: light.yeelight_monoa_0xed3674f
+            domain: light
+        sequence:
+          - type: turn_on
+            device_id: 4e5174cab4ac213fd7b2e344ad811f8e
+            entity_id: light.yeelight_monoa_0xed3674f
+            domain: light
+            brightness_pct: 100
+    default: []
+mode: single
