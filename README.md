@@ -43,3 +43,7 @@ services:
  sudo docker-compose up -d
  ```
  
+# Install HomeAssistant in Your phone
+
+Once HomeAssistant running in the rpi , you will be able to install the app from the playstore in your phone and 
+add it as part of your automations
