@@ -46,4 +46,5 @@ services:
 # Install HomeAssistant in Your phone
 
 Once HomeAssistant running in the rpi , you will be able to install the app from the playstore in your phone and 
-add it as part of your automations
+add it as part of your automations. In my case the url will be 192.168.0.17:8123, the phone if in the same WIFI as the rpi, it will detect it automatically
+If some problem , go to HomeAssistant app and delete all the cache and files and reinstall again
