@@ -25,7 +25,8 @@ wget https://github.com/home-assistant/supervised-installer/releases/latest/down
 sudo dpkg -i homeassistant-supervised.deb
 ```
 
-# Unsupervised HomeAssistant 
+# Install Unsupervised Homeassistant in Rpi
+
 ```
 sudo apt-get install docker.io docker-compose
 sudo reboot
