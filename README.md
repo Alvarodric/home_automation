@@ -1,22 +1,31 @@
-# Install HomeAssistant in Rpi
+# Install Supervised HomeAssistant in Rpi
+Have on mind that installation with Docker container will be without Supervisor(integrations with Grafana etc...) 
+For supervised HomeAssistant do the following:
 
 ```
-sudo apt-get update &&
-sudo apt-get upgrade -y &&
-sudo apt-get install -y python3 python3-dev python3-venv python3-pip libffi-dev libssl-dev libjpeg-dev zlib1g-dev autoconf &&
-sudo useradd -rm homeassistant -G dialout,gpio,i2c &&
-sudo mkdir /srv/homeassistant &&
-sudo chown homeassistant:homeassistant /srv/homeassistant &&
-sudo -u homeassistant -H -s &&
-cd /srv/homeassistant &&
-python3 -m venv /srv/homeassistant &&
-source /srv/homeassistant/bin/activate &&
-python3 -m pip install wheel &&
-pip3 install homeassistant &&
-hass
+sudo apt-get update && sudo apt-get upgrade -y
+sudo apt-get install jq wget curl avahi-daemon udisks2 libglib2.0-bin network-manager dbus apparmor -y
+sudo apt --fix-broken install
+sudo reboot
+'''
+
+Install Docker
+```
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker pi
+docker --version
 ```
 
-or with Docker 
+Download packages
+```
+wget https://github.com/home-assistant/os-agent/releases/download/1.2.2/os-agent_1.2.2_linux_armv7.deb
+sudo dpkg -i os-agent_1.2.2_linux_armv7.deb
+wget https://github.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
+sudo dpkg -i homeassistant-supervised.deb
+```
+
+# Unsupervised HomeAssistant 
 ```
 sudo apt-get install docker.io docker-compose
 sudo reboot
@@ -46,5 +55,6 @@ services:
 # Install HomeAssistant in Your phone
 
 Once HomeAssistant running in the rpi , you will be able to install the app from the playstore in your phone and 
-add it as part of your automations. In my case the url will be 192.168.0.17:8123, the phone if in the same WIFI as the rpi, it will detect it automatically
-If some problem , go to HomeAssistant app and delete all the cache and files and reinstall again
+add it as part of your automations. In my case the url will be 192.168.0.17:8123 (command - 'ifconfig' and look for wlan0 ip).
+The phone must be in the same WIFI connection as the rpi, so it can detect it automatically
+If some problem , go to HomeAssistant app in your android phone and delete all the cache and files and reinstall again
