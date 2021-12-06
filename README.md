@@ -25,7 +25,9 @@ wget https://github.com/home-assistant/supervised-installer/releases/latest/down
 sudo dpkg -i homeassistant-supervised.deb
 ```
 
-# Install Unsupervised Homeassistant in Rpi
+After this choose raspberry4 in my case, wait 10 minutes and after that you should be okey login with 192.168.0.69:8123
+
+# Install Unsupervised Homeassistant in Rpi(Docker container)
 
 ```
 sudo apt-get install docker.io docker-compose
