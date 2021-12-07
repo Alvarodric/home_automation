@@ -25,7 +25,12 @@ wget https://github.com/home-assistant/supervised-installer/releases/latest/down
 sudo dpkg -i homeassistant-supervised.deb
 ```
 
-After this choose raspberry4 in my case, wait 10 minutes and after that you should be okey login with 192.168.0.69:8123
+After this choose raspberry4 in my case(os is 32 bits and not 64 bits, TAKE CARE WITH THIS !!!!!), after that you should login with 192.168.0.69:8123
+Run:
+```
+ifconfig
+```
+In wlan0 check for the ip , thats the ip of your homeAssistant , the port will be 8123
 
 # Install Unsupervised Homeassistant in Rpi(Docker container)
 
