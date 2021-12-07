@@ -25,7 +25,7 @@ wget https://github.com/home-assistant/supervised-installer/releases/latest/down
 sudo dpkg -i homeassistant-supervised.deb
 ```
 
-After this choose raspberry4 in my case(os is 32 bits and not 64 bits, TAKE CARE WITH THIS !!!!!), after that you should login with 192.168.0.69:8123
+After this choose raspberry4 in my case(os is 32 bits and not 64 bits, thats why, TAKE CARE WITH THIS !!!!!), after that you should login with 192.168.0.69:8123
 Run:
 ```
 ifconfig
