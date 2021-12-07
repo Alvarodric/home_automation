@@ -18,7 +18,7 @@ docker --version
 ```
 
 Download packages
-In my case is armv7,check first with:
+In my case is armv7,check in the github page mentioned above:
 ```
 uname -m
 ```
