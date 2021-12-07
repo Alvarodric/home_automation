@@ -18,6 +18,11 @@ docker --version
 ```
 
 Download packages
+In my case is armv7,check first with:
+```
+uname -m
+```
+Now yes, download packages from github and install:
 ```
 wget https://github.com/home-assistant/os-agent/releases/download/1.2.2/os-agent_1.2.2_linux_armv7.deb
 sudo dpkg -i os-agent_1.2.2_linux_armv7.deb
