@@ -1,6 +1,6 @@
 # Install Supervised HomeAssistant in Rpi
 Have on mind that installation with Docker container will be without Supervisor(integrations with Grafana etc...) 
-For supervised HomeAssistant do the following:(Taken from https://peyanski.com/how-to-install-home-assistant-supervised-official-way/)
+For supervised HomeAssistant do the following:(Taken from https://github.com/home-assistant/supervised-installer)
 
 ```
 sudo apt-get update && sudo apt-get upgrade -y
